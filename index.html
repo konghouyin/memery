@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内存管理实验</title>
+		<link rel="stylesheet" type="text/css" href="index.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="left">
+				<div class="mem-circle">
+					<div class="num">0.0%</div>
+					<canvas id="circleBack" width="300" height="300"></canvas>
+					<canvas id="circle" width="300" height="300"></canvas>
+					<div class="title">内存实时使用占比</div>
+				</div>
+				<div class="choose">
+					<div class="msg" id="mem-main">
+						<div class="main">内存:(0.0%)</div>
+						<div class="message">loading...</div>
+					</div>
+					<div class="line"></div>
+					<div class="message">当前内存分配策略:</div>
+					<div class="type">
+						<div class="item">
+							<div class="message">首次适应算法</div>
+							<div class="btn active" onclick="data.type=1">使用</div>
+						</div>
+						<div class="item">
+							<div class="message">最佳适应算法</div>
+							<div class="btn" onclick="data.type=2">关闭</div>
+						</div>
+						<div class="item">
+							<div class="message">最坏适应算法</div>
+							<div class="btn" onclick="data.type=3">关闭</div>
+						</div>
+					</div>
+				</div>
+				<div class="mem-line">
+					<canvas id="lineBack" width="300" height="150"></canvas>
+					<canvas id="line" width="300" height="150"></canvas>
+					<div class="title">60秒内存使用情况</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="mem-show">
+					<div id="mem-show"></div>
+				</div>
+				<div class="auto-card">
+					<div class="message">开启自动内存运行演示：</div>
+					<div class="tbtn" onclick="data.auto=1">开启</div>
+					<div class="tbtn active" onclick="data.auto=0">关闭</div>
+					<div class="add"> 手动添加进程 </div>
+				</div>
+				<div class="mem-table">
+					<div class="table-type">
+						<div class="message">当前显示：</div>
+						<div class="stbtn active" onclick="data.showType='process'">内存使用</div>
+						<div class="stbtn" onclick="data.showType='space'">内存空闲</div>
+					</div>
+					<div class="line"></div>
+					<div class="table-show" id="table-show"></div>
+				</div>
+			</div>
+			<div class="foot">
+				<div class="log">
+					<div class="message">内存运行日志</div>
+					<div id="log"></div>
+				</div>
+			</div>
+		</div>
+		<div class="input" style="display: none;">
+			<span>name:</span><input type="text" id="submitName">
+			<br>
+			<span>size:</span><input type="text" id="submitSize">
+			
+			<div class="choosebtn">
+				<div class="submit">确认</div>
+				<div class="cancle">取消</div>
+			</div>
+		</div>
+		<script src="precentPrint.js" type="text/javascript" charset="utf-8"></script>
+		<script src="tablePrint.js" type="text/javascript" charset="utf-8"></script>
+		<script src="typeChoose.js" type="text/javascript" charset="utf-8"></script>
+		<script src="memCard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="memShow.js" type="text/javascript" charset="utf-8"></script>
+		<script src="memList.js" type="text/javascript" charset="utf-8"></script>
+		<script src="memLog.js" type="text/javascript" charset="utf-8"></script>
+		<script src="memControl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="inputBtn.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
